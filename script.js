@@ -1,15 +1,17 @@
-// Create an instance of Person
-var person = new Person("John", 30);
+// Creating instances of the classes
+const person = new Person("John", 25);
+const student = new Student("Alice", 20);
+const teacher = new Teacher("Mr. Smith", 35);
 
-// Call the greet method
-person.greet();  // Output: Hello, my name is John, I am 30 years old.
+// Using the getter and setter for Person
+console.log(person.name); // Output: John
+console.log(person.age);  // Output: 25
+person.age = 26;
+console.log(person.age);  // Output: 26
 
-// Create an instance of Employee
-var employee = new Employee("Jane", 25, "Web Developer");
+// Using the study method for Student
+student.study(); // Output: Alice is studying.
 
-// Call the greet method inherited from Person
-employee.greet();  // Output: Hello, my name is Jane, I am 25 years old.
-
-// Call the jobGreet method specific to Employee
-employee.jobGreet();  // Output: Hello, my name is Jane, I am 25 years old, and my job title is Web Developer.
+// Using the teach method for Teacher
+teacher.teach(); // Output: Mr. Smith is teaching.
 
