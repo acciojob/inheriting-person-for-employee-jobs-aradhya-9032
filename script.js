@@ -1,27 +1,15 @@
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-}
+// Create an instance of Person
+var person = new Person("John", 30);
 
-Person.prototype.greet = function () {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
-};
+// Call the greet method
+person.greet();  // Output: Hello, my name is John, I am 30 years old.
 
-function Employee(name, age, jobTitle) {
-    // Call the Person constructor to set the name and age properties
-    Person.call(this, name, age);
-    
-    this.jobTitle = jobTitle;
-}
+// Create an instance of Employee
+var employee = new Employee("Jane", 25, "Web Developer");
 
-// Inherit the Person prototype
-Employee.prototype = Object.create(Person.prototype);
+// Call the greet method inherited from Person
+employee.greet();  // Output: Hello, my name is Jane, I am 25 years old.
 
-// Add a method to the Employee prototype
-Employee.prototype.jobGreet = function () {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
-};
+// Call the jobGreet method specific to Employee
+employee.jobGreet();  // Output: Hello, my name is Jane, I am 25 years old, and my job title is Web Developer.
 
-// Do not change code below this line
-window.Person = Person;
-window.Employee = Employee;
